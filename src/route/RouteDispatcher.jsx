@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route,  } from "react-router-dom";
 import LoginPage from "../components/LoginPage/LoginPage";
+import NeedTutorPage from "../components/NeedTutorPage/NeedTutorPage";
 
 const RouteDispatcher = () => {
   return (
@@ -7,6 +8,7 @@ const RouteDispatcher = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/need-tutor-page" element={<NeedTutorPage />} />
       </Routes>
     </BrowserRouter>
   );
