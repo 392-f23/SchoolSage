@@ -1,11 +1,20 @@
-import "./NeedTutorPage.less"
+import "./NeedTutorPage.less";
+import { firebaseSignOut } from "../../utilities/firebaseUtils";
+import { useNavigate } from "react-router-dom";
 
 const NeedTutorPage = () => {
-    return (
-        <div className="need-tutor-page">
+  const navigate = useNavigate();
+  
+  const handleUserSignOut = () => {
+    firebaseSignOut();
+    navigate("/login");
+  };
 
-        </div>
-    );
-}
+  return (
+    <div className="need-tutor-page">
+      <button onClick={handleUserSignOut}>Test Signout</button>
+    </div>
+  );
+};
 
 export default NeedTutorPage;

@@ -38,7 +38,7 @@ const LoginPage = () => {
 
   const handleClickShowPassword = () => {
     setShowPassword((show) => !show);
-  }
+  };
 
   const handleMouseDownPassword = (e) => {
     e.preventDefault();
