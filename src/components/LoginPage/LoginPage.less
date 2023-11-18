@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Playpen+Sans:wght@600;800&family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
+  font-display: swap;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: #4e2a84;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  width: 940px;
+  min-height: 680px;
+  margin: auto;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #e5e7e8;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.login-icon-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.login-icon {
+  width: 60%;
+  height: 60%;
+}
+
+.login-title-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-title-text {
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-family: "VT323";
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.login-title-text.active {
+  color: #4e2a84;
+}
+
+.login-content-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.login-email-input-container {
+  min-width: 70% !important;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+}
+
+.login-email-input {
+  padding-right: 18px !important;
+}
+
+.login-email-input input {
+  overflow-wrap: break-word !important;
+  font-family: "Gilroy" !important;
+  white-space: nowrap !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  padding: 12px 0 12px 16px !important;
+  margin: 4.5px 0 4.5px 0 !important;
+}
+
+.login-password-input-container {
+  margin-top: 25px !important;
+  min-width: 70% !important;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+}
+
+.login-password-input {
+  padding-right: 18px !important;
+}
+
+.login-password-input input {
+  overflow-wrap: break-word !important;
+  font-family: "Gilroy" !important;
+  white-space: nowrap !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  padding: 12px 0 12px 16px !important;
+  margin: 4.5px 0 4.5px 0 !important;
+}
+
+.login-forget-password-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4.5%;
+  margin-right: 30%;
+}
+
+.login-forget-password-button {
+  padding: 0 !important;
+  overflow-wrap: break-word !important;
+  color: #8f8f8f !important;
+  font-size: 0.75rem !important;
+  font-family: "Gilroy" !important;
+  white-space: nowrap !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+.login-sign-in-button {
+  margin-top: 25px !important;
+  background-color: #4e2a84 !important;
+  overflow-wrap: break-word !important;
+  color: #ffffff !important;
+  font-size: 0.938rem !important;
+  font-family: "Gilroy" !important;
+  white-space: nowrap !important;
+  letter-spacing: 2px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  min-height: 55px !important;
+  min-width: 70% !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.login-continue-with-text {
+  margin-top: 35px;
+  overflow-wrap: break-word;
+  color: #8f8f8f;
+  font-size: 0.75rem;
+  font-family: "Gilroy";
+  white-space: nowrap;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.login-other-sign-in-container {
+  margin-top: 35px;
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-google-sign-in-button {
+  background-color: #ffffff !important;
+  flex: 1;
+  min-height: 48px !important;
+  border-radius: 10px !important;
+}
+
+.slogan-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-image: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgtoa-heftiba-QnUywvDdI1o-unsplash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.fuzzy-glass-section {
+  width: 84%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.7);
+}
+
+.fuzzy-glass-slogan {
+  overflow-wrap: break-word;
+  color: rgb(15, 43, 68, 1);
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  white-space: wrap;
+  letter-spacing: 2px;
+  line-height: 44px;
+  margin: 30px 10px 0 40px;
+  text-shadow: 0 1px 0 rgba(204, 204, 204, 0.5),
+    0 2px 0 rgba(204, 204, 204, 0.45), 0 3px 0 rgba(204, 204, 204, 0.4),
+    0 4px 0 rgba(204, 204, 204, 0.35), 0 5px 0 rgba(204, 204, 204, 0.3),
+    0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.fuzzy-glass-three-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.fuzzy-glass-dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.fuzzy-glass-dot.active {
+  width: 25px;
+  background-color: #ffffff;
+}
+
+.fuzzy-glass-section img,
+.fuzzy-glass-section p {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hidden-content {
+  opacity: 0;
+}
