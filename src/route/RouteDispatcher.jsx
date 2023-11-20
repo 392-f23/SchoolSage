@@ -11,12 +11,12 @@ const RouteDispatcher = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        {/* <Route path="/" element={<PostPage />} /> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/need-tutor-page" element={<NeedTutorPage />} />
+        <Route path="/tutor-page" element={<TutorPage/>} />
+        <Route path="/post-tutor-page" element={<PostPage />} />
         <Route path="/user-profileTutor" element={<UserProfilePostTutor />} />
         <Route path="/user-profileNeed" element={<UserProfilePostNeed />} />
-        <Route path="/tutor" element={<TutorPage/>} />
       </Routes>
     </BrowserRouter>
   );
