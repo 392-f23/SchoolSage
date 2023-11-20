@@ -1,0 +1,137 @@
+{"tutor":{
+    "001":{
+      "name": "Alex Johnson",
+      "subjects": ["Mathematics", "Physics"],
+      "experience": 5,
+      "qualifications": "B.Sc. in Physics",
+      "hourly_rate": 40,
+      "availability": "Monday - Friday, 5 PM - 9 PM",
+      "location": "New York City",
+      "rating": null
+    },
+    "002":{
+      "name": "Maria Rodriguez",
+      "subjects": ["Spanish", "History"],
+      "experience": 3,
+      "qualifications": "B.A. in History",
+      "hourly_rate": 35,
+      "availability": "Weekends, 10 AM - 4 PM",
+      "location": "Los Angeles",
+      "rating": null
+    },
+    "003":{
+      "name": "David Smith",
+      "subjects": ["English Literature", "Writing"],
+      "experience": 7,
+      "qualifications": "M.A. in English",
+      "hourly_rate": 45,
+      "availability": "Monday, Wednesday, Friday, 6 PM - 8 PM",
+      "location": "Chicago",
+      "rating": null
+    },
+    "004":{
+      "name": "Linda Brown",
+      "subjects": ["Biology", "Chemistry"],
+      "experience": 4,
+      "qualifications": "B.Sc. in Biology",
+      "hourly_rate": 50,
+      "availability": "Tuesday and Thursday, 4 PM - 7 PM",
+      "location": "Houston",
+      "rating": null
+    },
+    "005":{
+      "name": "John Doe",
+      "subjects": ["Computer Science", "Mathematics"],
+      "experience": 6,
+      "qualifications": "M.Sc. in Computer Science",
+      "hourly_rate": 55,
+      "availability": "Monday - Friday, 8 AM - 12 PM",
+      "location": "San Francisco",
+      "rating": null
+    }
+},
+"tutor_need":{
+    "A101":{
+      "student_id": "S201",
+      "subject_required": "Chemistry",
+      "duration": "1 hour per week",
+      "preferred_time": "Saturdays, 2 PM",
+      "urgency": "High",
+      "special_requirements": "Experience with college-level chemistry"
+    },
+    "A102":{
+      "student_id": "S202",
+      "subject_required": "Mathematics",
+      "duration": "2 hours per week",
+      "preferred_time": "Wednesday, 5 PM",
+      "urgency": "Medium",
+      "special_requirements": null
+    },
+    "A103":{
+      "student_id": "S203",
+      "subject_required": "English",
+      "duration": "3 hours per week",
+      "preferred_time": "Friday, 4 PM",
+      "urgency": "Low",
+      "special_requirements": "Native English speaker preferred"
+    },
+    "A104":{
+      "student_id": "S204",
+      "subject_required": "Physics",
+      "duration": "1.5 hours per week",
+      "preferred_time": "Tuesday, 6 PM",
+      "urgency": "High",
+      "special_requirements": "Experience with AP Physics"
+    },
+    "A105":{
+      "student_id": "S205",
+      "subject_required": "Spanish",
+      "duration": "1 hour per week",
+      "preferred_time": "Monday, 7 PM",
+      "urgency": "Medium",
+      "special_requirements": "Fluency in Latin American Spanish"
+    }
+},
+"user":{
+    "U301":{
+      "name": "Sarah Lee",
+      "role": "Student",
+      "email": "sarahlee@email.com",
+      "phone_number": "555-1234",
+      "address": "123 Maple Street, Boston",
+      "date_of_birth": "01/15/2005"
+    },
+    "U302":{
+      "name": "Emily Zhang",
+      "role": "Student",
+      "email": "emilyzhang@email.com",
+      "phone_number": "555-5678",
+      "address": "456 Oak Lane, Seattle",
+      "date_of_birth": "03/22/2006"
+    },
+    "U303":{
+      "name": "Michael Brown",
+      "role": "Tutor",
+      "email": "michaelbrown@email.com",
+      "phone_number": "555-9101",
+      "address": "789 Pine Road, Miami",
+      "date_of_birth": "11/08/1980"
+    },
+    "U304":{
+      "name": "Jessica Davis",
+      "role": "Tutor",
+      "email": "jessicadavis@email.com",
+      "phone_number": "555-1213",
+      "address": "101 Maple Avenue, Denver",
+      "date_of_birth": "07/15/1975"
+    },
+    "U305":{
+      "name": "Daniel Martinez",
+      "role": "Student",
+      "email": "danielmartinez@email.com",
+      "phone_number": "555-1415",
+      "address": "202 Cedar Blvd, San Antonio",
+      "date_of_birth": "05/09/2007"
+    }
+}
+}
