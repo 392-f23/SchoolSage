@@ -61,6 +61,16 @@ const LoginPage = () => {
       navigate("/need-tutor-page");
     }
   }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/user-profileTutor");
+  //   }
+  // }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/user-profileNeed");
+  //   }
+  // }, [user, navigate]);
 
   return (
     <div className="login-page">
