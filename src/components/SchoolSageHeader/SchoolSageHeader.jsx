@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "material-ui-search-bar";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
@@ -8,6 +9,29 @@ import "./SchoolSageHeader.less";
 const SchoolSageHeader = () => {
   const [searchValue, setSearchValue] = useState("");
   const [openNavigation, setOpenNavigation] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isNeedTutorPage = location.pathname === "/need-tutor-page";
+  const isTutorPage = location.pathname === "/tutor-page";
+  const isUserProfile = location.pathname === "/user-profile";
+
+  const navigateToNeedTutor = () => {
+    if (!isNeedTutorPage) {
+      navigate("/need-tutor-page");
+    }
+  };
+
+  const navigateToTutor = () => {
+    if (!isTutorPage) {
+      navigate("/tutor-page");
+    }
+  };
+
+  const navigateToUserProfile = () => {
+    if (!isUserProfile) {
+      navigate("/user-profile");
+    }
+  };
 
   return (
     <>
@@ -65,6 +89,7 @@ const SchoolSageHeader = () => {
             <Button
               variant="contained"
               className="profile-button"
+              onClick={navigateToUserProfile}
               startIcon={<PersonIcon />}
             >
               Profile
@@ -76,14 +101,17 @@ const SchoolSageHeader = () => {
       {openNavigation && (
         <div className="navigation">
           <div className="navigation-container">
-            <div className="navigation-need-tutor">
+            <div
+              className="navigation-need-tutor"
+              onClick={navigateToNeedTutor}
+            >
               <img
                 src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/img112312312313.png"
                 className="navigation-need-tutor-icon"
               />
               <span className="navigation-need-tutor-text">I Need Tutor</span>
             </div>
-            <div className="navigation-post-tutor">
+            <div className="navigation-post-tutor" onClick={navigateToTutor}>
               <img
                 src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgstudying.png"
                 className="navigation-post-tutor-icon"

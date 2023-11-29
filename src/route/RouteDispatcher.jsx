@@ -25,6 +25,7 @@ const RouteDispatcher = () => {
         <Route path="/need-tutor-page" element={<NeedTutorPage />} />
         <Route path="/tutor-page" element={<TutorPage/>} />
         <Route path="/post-tutor-page" element={<PostPage />} />
+        <Route path="/user-profile" element={<PostPage />} />
       </Routes>
     </BrowserRouter>
   );
