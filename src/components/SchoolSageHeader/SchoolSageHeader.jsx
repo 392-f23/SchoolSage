@@ -109,14 +109,20 @@ const SchoolSageHeader = () => {
                 src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/img112312312313.png"
                 className="navigation-need-tutor-icon"
               />
-              <span className="navigation-need-tutor-text">I Need Tutor</span>
+              <div className="navigation-need-tutor-text-container">
+                <span className="navigation-need-tutor-text-i">I&nbsp;</span>
+                <span className="navigation-need-tutor-text">Need Tutor</span>
+              </div>
             </div>
             <div className="navigation-post-tutor" onClick={navigateToTutor}>
               <img
                 src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgstudying.png"
                 className="navigation-post-tutor-icon"
               />
-              <span className="navigation-post-tutor-text">I Post Tutor</span>
+              <div className="navigation-post-tutor-text-container">
+                <span className="navigation-post-tutor-text-i">I&nbsp;</span>
+                <span className="navigation-post-tutor-text">Post Tutor</span>
+              </div>
             </div>
           </div>
           <button
