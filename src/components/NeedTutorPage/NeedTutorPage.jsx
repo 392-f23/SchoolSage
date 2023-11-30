@@ -26,9 +26,13 @@ const NeedTutorPage = () => {
     console.log("post");
   };
 
-  const navigateToPostNeedTutor = () => {
+  const navigateToChat = (receiver) => {
+    navigate(`/chat`, { state: { receiver: receiver } });
+  };
 
-  }
+  const navigateToPostNeedTutor = () => {
+    navigate("/post-need-tutor-page")
+  };
 
   return (
     <div className="need-tutor-page">
@@ -65,8 +69,12 @@ const NeedTutorPage = () => {
               >
                 Add to Dashboard
               </Button>
-              <Button variant="contained" endIcon={<ChatIcon />}>
-                Contact
+              <Button
+                variant="contained"
+                endIcon={<ChatIcon />}
+                onClick={() => navigateToChat(user.name)}
+              >
+                Contact{" "}
               </Button>
             </CardContent>
           </Card>
