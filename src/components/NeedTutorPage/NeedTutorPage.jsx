@@ -45,7 +45,7 @@ const NeedTutorPage = () => {
                                     borderRadius: '20px',
                                     marginLeft: '10px',
                                     fontSize: '0.8rem'
-                                }}>
+                                }}> 
                                     {user.category}
                                 </div>
                             </Typography>
@@ -62,8 +62,8 @@ const NeedTutorPage = () => {
                 {user.description}
               </Typography>
               
-              <Button style={{ backgroundColor: '#00008b', minWidth: 'initial', marginRight: "10px"}} variant="contained" endIcon={<PersonAddIcon />}>Add to Dashboard</Button>
-              <Button style={{ backgroundColor: '#00008b'}} variant="contained" endIcon={<ChatIcon />}>Contact</Button>
+              <Button style={{  minWidth: 'initial', marginRight: "10px"}} variant="contained" endIcon={<PersonAddIcon />}>Add to Dashboard</Button>
+              <Button  variant="contained" endIcon={<ChatIcon />}>Contact</Button>
             
             </CardContent>
           </Card>

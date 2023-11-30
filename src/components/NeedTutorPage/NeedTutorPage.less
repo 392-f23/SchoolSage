@@ -10,11 +10,28 @@
   flex-direction: column;
   font-family: "Gilroy";
   background-color: #f1f9f8;
+
+  .posting-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+
+    .user-card {
+      flex: 0 1 100%;
+      margin: 10px;
+    }
+
+    @media (min-width: 768px) { 
+      .user-card {
+        flex: 0 1 calc(33.333% - 20px);
+      }
+    }
+  }
 }
 
 .posting-box {
   width: 90%;
-  height: 85vh;
+  height: 78vh;
   margin: auto;
   overflow-y: scroll;
   background-color: #9da8fb;
