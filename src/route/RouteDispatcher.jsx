@@ -3,7 +3,7 @@ import { useAuthState } from "../utilities/firebaseUtils";
 import LoginPage from "../components/LoginPage/LoginPage";
 import NeedTutorPage from "../components/NeedTutorPage/NeedTutorPage";
 import TutorPage from "../components/TutorPage/TutorPage";
-import PostPage from "../components/PostPage/PostPage";
+import PostTutorPage from "../components/PostTutorPage/PostTutorPage";
 
 const RouteDispatcher = () => {
   const [user] = useAuthState();
@@ -24,8 +24,13 @@ const RouteDispatcher = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/need-tutor-page" element={<NeedTutorPage />} />
         <Route path="/tutor-page" element={<TutorPage/>} />
-        <Route path="/post-tutor-page" element={<PostPage />} />
+
+        <Route path="/post-tutor-page" element={<PostTutorPage />} />
+      
+
+       
         <Route path="/user-profile" element={<PostPage />} />
+
       </Routes>
     </BrowserRouter>
   );
