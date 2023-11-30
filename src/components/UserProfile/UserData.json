@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Alex Johnson",
+    "location": "New York, NY",
+    "level": "Bachelor's in Computer Science",
+    "category": "Computer Science",
+    "time": "Monday to Friday, Afternoons",
+    "description": "I can teach high school computer science and programming. Passionate about introducing students to the world of coding and problem-solving."
+  },
+  {
+    "name": "Emily Davis",
+    "location": "Los Angeles, CA",
+    "level": "Master's in Education",
+    "category": "English Literature",
+    "time": "Monday to Friday, Afternoons",
+    "description": "Dedicated to helping students explore the world of literature. I can teach high school English literature and improve reading skills."
+  },
+  {
+    "name": "Michael Rodriguez",
+    "location": "Chicago, IL",
+    "level": "Bachelor's in History",
+    "category": "History",
+    "time": "Tuesday to Thursday, Afternoons",
+    "description": "Fascinated by historical events and their impact on the present. I can teach high school history and make the past come alive through engaging lessons."
+  }
+]
