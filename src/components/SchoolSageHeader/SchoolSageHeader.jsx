@@ -44,7 +44,7 @@ const SchoolSageHeader = () => {
           />
         </div>
         {/* title */}
-        <div className="header-title-container">
+        <div className="header-title-container" onClick={navigateToNeedTutor}>
           <div className="upper-section">
             <span className="header-title-text">S</span>
             <span className="header-title-text">c</span>
@@ -67,7 +67,7 @@ const SchoolSageHeader = () => {
         <div className="header-search-container">
           <SearchBar
             className="header-search"
-            placeholder="Search Your Tutor"
+            placeholder="Search Your Tutor 😎"
             value={searchValue}
             onChange={(searchValue) => setSearchValue(searchValue)}
             onRequestSearch={() => {}}

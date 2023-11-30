@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route,  Navigate} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthState } from "../utilities/firebaseUtils";
 import LoginPage from "../components/LoginPage/LoginPage";
+import SchoolSageChat from "../components/SchoolSageChat/SchoolSageChat";
 import NeedTutorPage from "../components/NeedTutorPage/NeedTutorPage";
 import TutorPage from "../components/TutorPage/TutorPage";
 import PostPage from "../components/PostPage/PostPage";
@@ -11,7 +12,7 @@ const RouteDispatcher = () => {
   return (
     <BrowserRouter>
       <Routes>
-      <Route
+        <Route
           path="/"
           element={
             user ? (
@@ -23,9 +24,10 @@ const RouteDispatcher = () => {
         />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/need-tutor-page" element={<NeedTutorPage />} />
-        <Route path="/tutor-page" element={<TutorPage/>} />
+        <Route path="/tutor-page" element={<TutorPage />} />
         <Route path="/post-tutor-page" element={<PostPage />} />
         <Route path="/user-profile" element={<PostPage />} />
+        <Route path="/chat" element={<SchoolSageChat />} />
       </Routes>
     </BrowserRouter>
   );

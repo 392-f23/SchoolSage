@@ -16,6 +16,8 @@ const NeedTutorPage = () => {
     console.log("post");
   };
 
+  const navigateToChat = () => navigate("/chat");
+
   return (
     <div className="need-tutor-page">
       <SchoolSageHeader />
@@ -30,7 +32,11 @@ const NeedTutorPage = () => {
               <Typography variant="body2">{user.location}</Typography>
               <Typography variant="body2">{user.Time}</Typography>
               <Typography variant="body2">{user.Description}</Typography>
-              <Button variant="contained" endIcon={<ChatIcon />}>
+              <Button
+                variant="contained"
+                endIcon={<ChatIcon />}
+                onClick={navigateToChat}
+              >
                 Contact{" "}
               </Button>
             </CardContent>
