@@ -1,48 +1,40 @@
-.need-tutor-page{
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: "Gilroy";
-    src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
-    
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
+  font-display: swap;
 }
-.signout-button{
-    width: 25vw;
-    margin: 10 auto;
-    font-size: 15px;
-    background-color: #ceb8ef;
-    padding: 10px;
+
+.need-tutor-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Gilroy";
+  background-color: #f1f9f8;
+
+  .posting-box {
     display: flex;
-    justify-content: center;
-    font-family: "Gilroy";
-    src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+
+    .user-card {
+      flex: 0 1 100%;
+      margin: 10px;
+    }
+
+    @media (min-width: 768px) { 
+      .user-card {
+        flex: 0 1 calc(33.333% - 20px);
+      }
+    }
+  }
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    font-family: "Gilroy";
-    src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
-    margin-bottom: 10px
-  }
-  
-  .header .title {
-    flex-grow: 1;
-    font-size: 20px;
-  }
-  
-  .header Button {
-    position: absolute;
-    right: 0;
-  }
-  .posting-box{
-    height: 85vh;
-    overflow-y: scroll;
-    background-color: hsl(200, 6%, 90%);
-    border: 2px solid #b1b0b0;
-  }
+
+.posting-box {
+  width: 90%;
+  height: 78vh;
+  margin: auto;
+  overflow-y: scroll;
+  background-color: #9da8fb;
+  border: 2px solid #b1b0b0;
+  margin-top: 15px;
+}

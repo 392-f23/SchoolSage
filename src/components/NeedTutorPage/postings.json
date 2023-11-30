@@ -1,38 +1,82 @@
 {
-    "user1": {
-      "name": "Adrian Hoffer",
-      "level": "First grade",
-      "location": "North Evanston",
-      "Time": "MWF 10:00 - 11:00 AM",
-      "Description": "Struggling with technology, unable to navigate a Macbook, please be patient"
-    },
-    "user2": {
-      "name": "Sam Patel",
-      "level": "Second grade",
-      "location": "West Ridge",
-      "Time": "TTh 9:00 - 10:30 AM",
-      "Description": "Enthusiastic about learning, needs help with reading comprehension"
-    },
-    "user3": {
-      "name": "Elijah Smith",
-      "level": "Third grade",
-      "location": "Downtown Evanston",
-      "Time": "MWF 2:00 - 3:00 PM",
-      "Description": "Gifted in math, looking for advanced challenges"
-    },
-    "user4": {
-      "name": "Luna Garcia",
-      "level": "Fifth grade",
-      "location": "South Evanston",
-      "Time": "TTh 11:00 AM - 12:30 PM",
-      "Description": "Needs extra support in science, very curious and asks many questions"
-    },
-    "user5": {
-      "name": "Eilene Lee",
-      "level": "Second grade",
-      "location": "Central Evanston",
-      "Time": "MWF 8:00 - 9:00 AM",
-      "Description": "Struggles with attention span, highly interested in interactive activities"
-    }
+  "user1": {
+    "name": "Adrian Hoffer",
+    "level": "First grade",
+    "location": "North Evanston",
+    "time": "MWF 10:00 - 11:00 AM",
+    "description": "Struggling with basic math concepts",
+    "category": "Math"
+  },
+  "user2": {
+    "name": "Sam Patel",
+    "level": "Second grade",
+    "location": "West Ridge",
+    "time": "TTh 9:00 - 10:30 AM",
+    "description": "Enthusiastic about learning, needs help with reading comprehension",
+    "category": "Reading"
+  },
+  "user3": {
+    "name": "Elijah Smith",
+    "level": "Third grade",
+    "location": "Downtown Evanston",
+    "time": "MWF 2:00 - 3:00 PM",
+    "description": "Gifted in math, looking for advanced challenges",
+    "category": "Math"
+  },
+  "user4": {
+    "name": "Luna Garcia",
+    "level": "Fifth grade",
+    "location": "South Evanston",
+    "time": "TTh 11:00 AM - 12:30 PM",
+    "description": "Needs extra support in science, very curious and asks many questions",
+    "category": "Science"
+  },
+  "user5": {
+    "name": "Eilene Lee",
+    "level": "Second grade",
+    "location": "Central Evanston",
+    "time": "MWF 8:00 - 9:00 AM",
+    "description": "Interested in storytelling and writing short stories",
+    "category": "Writing"
+  },
+  "user6": {
+    "name": "Jacob Martinez",
+    "level": "Fourth grade",
+    "location": "East Evanston",
+    "time": "TTh 1:00 - 2:30 PM",
+    "description": "Excels in creative writing, needs help with grammar",
+    "category": "Writing"
+  },
+  "user7": {
+    "name": "Mia Zhang",
+    "level": "First grade",
+    "location": "West Ridge",
+    "time": "MWF 11:30 AM - 12:30 PM",
+    "description": "Very artistic, interested in starting basic drawing lessons",
+    "category": "Art"
+  },
+  "user8": {
+    "name": "Oliver Thompson",
+    "level": "Third grade",
+    "location": "North Evanston",
+    "time": "TTh 10:00 - 11:30 AM",
+    "description": "Shows a keen interest in natural sciences and experiments",
+    "category": "Science"
+  },
+  "user9": {
+    "name": "Isabella Johnson",
+    "level": "Second grade",
+    "location": "Downtown Evanston",
+    "time": "MWF 1:00 - 2:00 PM",
+    "description": "Enjoys reading children's fiction and fairy tales",
+    "category": "Reading"
+  },
+  "user10": {
+    "name": "Ethan Brown",
+    "level": "Fourth grade",
+    "location": "South Evanston",
+    "time": "TTh 2:00 - 3:30 PM",
+    "description": "Interested in geometry and spatial reasoning",
+    "category": "Math"
   }
-  
+}

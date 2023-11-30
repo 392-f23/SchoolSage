@@ -1,3 +1,44 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGilroy-Regular.ttf");
+  font-display: swap;
+}
+
+.tutor-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Gilroy";
+  background-color: #f1f9f8;
+
+  .posting-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+
+    .user-card {
+      flex: 0 1 100%;
+      margin: 10px;
+    }
+
+    @media (min-width: 768px) { 
+      .user-card {
+        flex: 0 1 calc(33.333% - 20px);
+      }
+    }
+  }
+}
+
+.posting-box {
+  width: 90%;
+  height: 78vh;
+  margin: auto;
+  overflow-y: scroll;
+  background-color: #9da8fb;
+  border: 2px solid #b1b0b0;
+  margin-top: 15px;
+}
+
 .tutor-card-container {
     width: auto;
     height: auto;
