@@ -64,7 +64,9 @@ const SchoolSageChat = () => {
       }));
       setChatListData(initialChatData);
     }
+  }, []);
 
+  useEffect(() => {
     if (receiver) {
       let newReceiverData = {
         avatar:
@@ -94,6 +96,15 @@ const SchoolSageChat = () => {
       setCurrentMessages(messageData.get(receiver) || []);
     }
   }, [receiver]);
+
+  useEffect(() => {
+    if (!receiver && chatListData.length > 0) {
+      const firstChat = chatListData[0];
+      setCurrentChat(firstChat.title);
+      setCurrentReceiver(firstChat);
+      setCurrentMessages(messageData.get(firstChat.title) || []);
+    }
+  }, [chatListData]);
 
   useEffect(() => {
     setMessageData(GetMessageData());
