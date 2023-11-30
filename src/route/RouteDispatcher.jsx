@@ -4,6 +4,7 @@ import LoginPage from "../components/LoginPage/LoginPage";
 import NeedTutorPage from "../components/NeedTutorPage/NeedTutorPage";
 import TutorPage from "../components/TutorPage/TutorPage";
 import PostTutorPage from "../components/PostTutorPage/PostTutorPage";
+import ParentsPage from "../components/ParentsPage/ParentsPage";
 
 const RouteDispatcher = () => {
   const [user] = useAuthState();
@@ -25,6 +26,7 @@ const RouteDispatcher = () => {
         <Route path="/need-tutor-page" element={<NeedTutorPage />} />
         <Route path="/tutor-page" element={<TutorPage />} />
         <Route path="/post-tutor-page" element={<PostTutorPage />} />
+        <Route path="/post-need-tutor-page" element={<ParentsPage />} />
       </Routes>
     </BrowserRouter>
   );
