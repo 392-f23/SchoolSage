@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "material-ui-search-bar";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
+import ChatIcon from "@mui/icons-material/Chat";
 import PersonIcon from "@mui/icons-material/Person";
 import "./SchoolSageHeader.less";
 
@@ -13,6 +14,7 @@ const SchoolSageHeader = () => {
   const location = useLocation();
   const isNeedTutorPage = location.pathname === "/need-tutor-page";
   const isTutorPage = location.pathname === "/tutor-page";
+  const isChat = location.pathname === "/chat";
   const isUserProfile = location.pathname === "/user-profile";
 
   const navigateToNeedTutor = () => {
@@ -24,6 +26,12 @@ const SchoolSageHeader = () => {
   const navigateToTutor = () => {
     if (!isTutorPage) {
       navigate("/tutor-page");
+    }
+  };
+
+  const navigateToChat = () => {
+    if (!isChat) {
+      navigate("/chat");
     }
   };
 
@@ -83,6 +91,16 @@ const SchoolSageHeader = () => {
               startIcon={<HomeIcon />}
             >
               Navigate
+            </Button>
+          </div>
+          <div className="header-user-interaction-chat">
+            <Button
+              variant="contained"
+              className="chat-button"
+              onClick={navigateToChat}
+              startIcon={<ChatIcon />}
+            >
+              Message
             </Button>
           </div>
           <div className="header-user-interaction-profile">

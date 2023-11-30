@@ -16,7 +16,9 @@ const NeedTutorPage = () => {
     console.log("post");
   };
 
-  const navigateToChat = () => navigate("/chat");
+  const navigateToChat = (receiver) => {
+    navigate(`/chat`, { state: { receiver: receiver } });
+  };
 
   return (
     <div className="need-tutor-page">
@@ -35,7 +37,7 @@ const NeedTutorPage = () => {
               <Button
                 variant="contained"
                 endIcon={<ChatIcon />}
-                onClick={navigateToChat}
+                onClick={() => navigateToChat(user.name)}
               >
                 Contact{" "}
               </Button>
