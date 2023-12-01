@@ -104,9 +104,13 @@ export const signInWithGoogle = () => {
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
 };
 
-export const firebaseSignOut = () => {
-  const firebase = getFirebase();
-  signOut(getAuth(firebase));
+export const firebaseSignOut = async () => {
+  const auth = getAuth();
+  try {
+    await signOut(auth);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const useAuthState = () => {
