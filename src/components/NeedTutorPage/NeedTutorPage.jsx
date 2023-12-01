@@ -36,6 +36,7 @@ const NeedTutorPage = () => {
   const navigateToPostNeedTutor = () => {
     navigate("/post-need-tutor-page")
   };
+  
   const handleTutor = (userName) => {
     const updatedPostings = currentPostings.filter(user => user.name !== userName);
     setCurrentPostings(updatedPostings);

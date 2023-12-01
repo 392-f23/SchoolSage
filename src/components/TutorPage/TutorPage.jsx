@@ -1,6 +1,5 @@
 import "./Tutorpage.less";
 import TutorCard from "../TutorCard/TutorCard";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SchoolSageHeader from "../SchoolSageHeader/SchoolSageHeader";
 import { useDbData } from "../../utilities/firebaseUtils";
@@ -13,7 +12,7 @@ const TutorPage = () => {
   const navigateToPostTutor = () => {
     navigate("/post-tutor-page");
   };
-  
+
   const [data, error] = useDbData("/Tutor-Page");
   if (error)
     return (
