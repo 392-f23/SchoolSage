@@ -4,8 +4,8 @@ import SchoolSageHeader from "../SchoolSageHeader/SchoolSageHeader";
 import Button from "@mui/material/Button";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
+import { firebaseSignOut } from "../../utilities/firebaseUtils";
 
-// Import the test user data
 import testData from "./UserData.json";
 
 const UserProfile = ({ setIsUserLoggedIn, user }) => {
@@ -19,17 +19,18 @@ const UserProfile = ({ setIsUserLoggedIn, user }) => {
 
   const data = testData[0];
 
-  // Handle user data
   const name = data.name;
   const location = data.location;
   const level = data.level;
-  // const category = data.category;
-  // const time = data.time;
-  // const description = data.description;
 
   const handleUserSignOut = () => {
-    // You can add your sign-out logic here
-    navigate("/login");
+    firebaseSignOut()
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handlePostTutor = () => {
@@ -73,7 +74,7 @@ const UserProfile = ({ setIsUserLoggedIn, user }) => {
                 To make a tutor request
               </Button>
             </div>
-            {/* <Button
+            <Button
               onClick={handleUserSignOut}
               variant="outlined"
               color="error"
@@ -81,7 +82,7 @@ const UserProfile = ({ setIsUserLoggedIn, user }) => {
               className="logout-button"
             >
               Logout
-            </Button> */}
+            </Button>
           </div>
         </div>
       </div>
