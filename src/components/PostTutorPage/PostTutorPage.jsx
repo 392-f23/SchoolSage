@@ -1,29 +1,53 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./PostTutorPage.less";
+import { useDbAdd, useDbData } from '../../utilities/firebaseUtils';
 
 const PostTutorPage = () => {
     
     const navigate = useNavigate();
+    const [data, error] = useDbData('/Tutor-Page');
+    const [addData, result] = useDbAdd('/Tutor-Page');
+
+    useEffect(() => {
+        if (data) {
+          console.log('Data from database:', data);
+        }
+      }, [data]);
+    
+    useEffect(() => {
+    if (error) {
+        console.error('Error fetching data:', error);
+    }
+    }, [error]);
 
     const handleHomeClick = () => {
         navigate("/tutor-page");
     };
 
+    const categoryColorMapping = {
+        "Science": "#2ecc71",
+        "Reading": "#3498db",
+        "Math": "#e74c3c",
+        "Art": "#9b59b6", 
+        "Writing": "#e67e22" 
+    };
+
     const [formData, setFormData] = useState({
-        courseName: '',
+        name: '',
         level: '',
         location: '',
         time: '',
         description: '',
+        category: 'Science',
         days: {
-            monday: { selected: false, time: '' },
-            tuesday: { selected: false, time: '' },
-            wedensday: { selected: false, time: '' },
-            thursday: { selected: false, time: '' },
-            friday: { selected: false, time: '' },
-            saturday: { selected: false, time: '' },
-            sunday: { selected: false, time: '' },
+            monday: { selected: false, startTime: '', endTime: '' },
+            tuesday: { selected: false, startTime: '', endTime: '' },
+            wednesday: { selected: false, startTime: '', endTime: '' },
+            thursday: { selected: false, startTime: '', endTime: '' },
+            friday: { selected: false, startTime: '', endTime: '' },
+            saturday: { selected: false, startTime: '', endTime: '' },
+            sunday: { selected: false, startTime: '', endTime: '' },
         },
     });
     
@@ -37,7 +61,22 @@ const PostTutorPage = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Form submitted with data: ${JSON.stringify(formData)}`);
+        const selectedDays = Object.entries(formData.days)
+        .filter(([day, data]) => data.selected)
+        .map(([day, data]) => `${day.substring(0, 2).toUpperCase()} ${data.startTime}-${data.endTime}`)
+        .join(', ');
+
+        const submitData = {
+            name: formData.name,
+            level: formData.level,
+            location: formData.location,
+            time: selectedDays,
+            description: formData.description,
+            category: formData.category
+        };
+
+        alert(`Form submitted with data: ${JSON.stringify(submitData)}`);
+        addData(submitData);
     };
     
     const handleDayChange = (day) => {
@@ -53,14 +92,14 @@ const PostTutorPage = () => {
         }));
     };
     
-    const handleTimeChange = (day, time) => {
+    const handleTimeChange = (day, time, isStartTime) => {
         setFormData(prevState => ({
             ...prevState,
             days: {
                 ...prevState.days,
                 [day]: {
                     ...prevState.days[day],
-                    time: time
+                    ...(isStartTime ? { startTime: time } : { endTime: time })
                 }
             }
         }));
@@ -71,8 +110,8 @@ const PostTutorPage = () => {
             <form onSubmit={handleSubmit} className="form-box">
                 <h1>To become a Tutor</h1>
                 <div className="form-group">
-                    <label htmlFor="courseName" className="label">Course Name:</label>
-                    <input type="text" id="courseName" name="courseName" className="form-control input-text" value={formData.courseName} onChange={handleChange} />
+                    <label htmlFor="name" className="label">Name:</label>
+                    <input type="text" id="name" name="name" className="form-control input-text" value={formData.name} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="level" className="label">Level:</label>
@@ -82,26 +121,43 @@ const PostTutorPage = () => {
                     <label htmlFor="location" className="label">Location:</label>
                     <input type="text" id="location" name="location" className="form-control input-text" value={formData.location} onChange={handleChange} />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="category" className="label">Category:</label>
+                    <select id="category" name="category" className="form-control input-text" value={formData.category} onChange={handleChange}>
+                        {Object.entries(categoryColorMapping).map(([category]) => (
+                            <option key={category} value={category}>
+                                {category}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <div className="form-group days-checkbox-group">
-                    {Object.entries(formData.days).map(([day, { selected, time }]) => (
-                        <div key={day}>
-                            <input 
-                                type="checkbox" 
-                                id={day} 
-                                checked={selected} 
-                                onChange={() => handleDayChange(day)} 
-                            />
-                            <label htmlFor={day}>{day.charAt(0).toUpperCase() + day.slice(1)}</label>
-                            {selected && (
+                {Object.entries(formData.days).map(([day, { selected, startTime, endTime }]) => (
+                    <div key={day}>
+                        <input 
+                            type="checkbox" 
+                            id={day} 
+                            checked={selected} 
+                            onChange={() => handleDayChange(day)} 
+                        />
+                        <label htmlFor={day}>{day.charAt(0).toUpperCase() + day.slice(1)}</label>
+                        {selected && (
+                            <>
                                 <input 
                                     type="time" 
-                                    value={time} 
-                                    onChange={(e) => handleTimeChange(day, e.target.value)} 
+                                    value={startTime} 
+                                    onChange={(e) => handleTimeChange(day, e.target.value, true)} 
                                 />
-                            )}
-                        </div>
-                    ))}
-                </div>
+                                <input 
+                                    type="time" 
+                                    value={endTime} 
+                                    onChange={(e) => handleTimeChange(day, e.target.value, false)} 
+                                />
+                            </>
+                        )}
+                    </div>
+                ))}
+            </div>
                 <div className="form-group">
                     <label htmlFor="description" className="label">Description:</label>
                     <textarea id="description" name="description" className="form-control textarea" value={formData.description} onChange={handleChange}></textarea>
