@@ -9,6 +9,8 @@ import postings from "./postings.json";
 import ChatIcon from "@mui/icons-material/Chat";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import Fab from "@mui/material/Fab";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 import "./NeedTutorPage.less";
 import SchoolSageHeader from "../SchoolSageHeader/SchoolSageHeader.jsx";
 
@@ -21,7 +23,8 @@ const categoryColorMapping = {
 };
 const NeedTutorPage = () => {
   const navigate = useNavigate();
-
+  
+  const [currentPostings, setCurrentPostings] = useState(Object.values(postings));
   const handleAddPosting = () => {
     console.log("post");
   };
@@ -33,12 +36,29 @@ const NeedTutorPage = () => {
   const navigateToPostNeedTutor = () => {
     navigate("/post-need-tutor-page")
   };
-
+  const handleTutor = (userName) => {
+    const updatedPostings = currentPostings.filter(user => user.name !== userName);
+    setCurrentPostings(updatedPostings);
+    setBookingDeleted(true)
+  };
+  
+  const [isBookingDeleted, setBookingDeleted] = useState(false);
+  useEffect(() => {
+    if (isBookingDeleted) {
+      setTimeout(() => {
+        setBookingDeleted(false);
+      }, 3000);
+    }
+  }, [isBookingDeleted]);
   return (
     <div className="need-tutor-page">
       <SchoolSageHeader />
+      {isBookingDeleted && <Alert style={{backgroundColor:"#f1f9f8", padding: "10px", justifyContent: "center" }}severity="info">
+          <AlertTitle>Success</AlertTitle>
+          {`Added to your dashboard`}
+        </Alert>}
       <div className="posting-box">
-        {Object.values(postings).map((user, index) => (
+        {Object.values(currentPostings).map((user, index) => (
           <Card style={{ margin: "10px" }} key={index} className="user-card">
             <CardContent>
               <Typography variant="h5" component="div">
@@ -66,8 +86,9 @@ const NeedTutorPage = () => {
                 style={{ minWidth: "initial", marginRight: "10px" }}
                 variant="contained"
                 endIcon={<PersonAddIcon />}
+                onClick={() => handleTutor(user.name)}
               >
-                Add to Dashboard
+                Tutor this person
               </Button>
               <Button
                 variant="contained"
