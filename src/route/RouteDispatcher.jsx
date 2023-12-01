@@ -7,12 +7,16 @@ import TutorPage from "../components/TutorPage/TutorPage";
 import PostTutorPage from "../components/PostTutorPage/PostTutorPage";
 import ParentsPage from "../components/ParentsPage/ParentsPage";
 import UserProfile from "../components/UserProfile/UserProfile";
+import { TutorProvider } from '../components/Context/TutorContext';
+
 
 const RouteDispatcher = () => {
   const [user] = useAuthState();
 
   return (
     <BrowserRouter>
+          <TutorProvider>
+
       <Routes>
         <Route
           path="/"
@@ -32,6 +36,9 @@ const RouteDispatcher = () => {
         <Route path="/post-need-tutor-page" element={<ParentsPage />} />
         <Route path="/chat" element={<SchoolSageChat />} />
       </Routes>
+
+      </TutorProvider>
+
     </BrowserRouter>
   );
 };

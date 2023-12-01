@@ -110,7 +110,7 @@ const SchoolSageHeader = () => {
               onClick={navigateToUserProfile}
               startIcon={<PersonIcon />}
             >
-              Profile
+              Dashboard
             </Button>
           </div>
         </div>
