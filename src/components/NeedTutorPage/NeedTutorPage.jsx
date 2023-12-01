@@ -13,8 +13,10 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import "./NeedTutorPage.less";
 import SchoolSageHeader from "../SchoolSageHeader/SchoolSageHeader.jsx";
+import { useTutorContext } from '../Context/TutorContext';
 
-const categoryColorMapping = {
+
+export const categoryColorMapping = {
   Science: "#2ecc71", // Green
   Reading: "#3498db", // Soft blue
   Math: "#e74c3c", // Red
@@ -23,11 +25,14 @@ const categoryColorMapping = {
 };
 const NeedTutorPage = () => {
   const navigate = useNavigate();
+  const { addNeedTutor, selectedNeedTutors } = useTutorContext();
   
   const [currentPostings, setCurrentPostings] = useState(Object.values(postings));
   const handleAddPosting = () => {
     console.log("post");
   };
+
+  
 
   const navigateToChat = (receiver) => {
     navigate(`/chat`, { state: { receiver: receiver } });
@@ -38,7 +43,12 @@ const NeedTutorPage = () => {
   };
   
   const handleTutor = (userName) => {
-    const updatedPostings = currentPostings.filter(user => user.name !== userName);
+    const selectedNeedTutor = currentPostings.find((user) => user.name === userName);
+    if (selectedNeedTutor) {
+      addNeedTutor(selectedNeedTutor);
+      console.log("selected tutors from need tutor page: ", selectedNeedTutors)
+    }
+    const updatedPostings = currentPostings.filter((user) => user.name !== userName);
     setCurrentPostings(updatedPostings);
     setBookingDeleted(true)
   };
@@ -51,6 +61,7 @@ const NeedTutorPage = () => {
       }, 3000);
     }
   }, [isBookingDeleted]);
+  
   return (
     <div className="need-tutor-page">
       <SchoolSageHeader />

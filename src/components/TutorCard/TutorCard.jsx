@@ -19,9 +19,16 @@ const categoryColorMapping = {
   Writing: "#e67e22", // Orange
 };
 
-const TutorCard = ({ itemInfo }) => {
+const TutorCard = ({ itemInfo, onNeedHelpClick }) => {
+  
   const item = itemInfo[1];
   const navigate = useNavigate();
+
+  const handleNeedHelpClick = () => {
+    // Assuming itemInfo contains the tutor information
+    // Perform any logic related to "I need help" button click
+    onNeedHelpClick(itemInfo[1]);
+  };
 
   const navigateToChat = (receiver) => {
     navigate(`/chat`, { state: { receiver: receiver } });
@@ -56,6 +63,7 @@ const TutorCard = ({ itemInfo }) => {
         <Typography variant="body2">{item.description}</Typography>
 
         <Button
+        onClick={handleNeedHelpClick}
           style={{ minWidth: "initial", marginRight: "10px" }}
           variant="contained"
           endIcon={<PersonAddIcon />}
